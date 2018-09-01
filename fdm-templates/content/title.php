@@ -1,0 +1,1 @@
+<div class="fdm-item-title"><?php echo $this->title; ?></div>

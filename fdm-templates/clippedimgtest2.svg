@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="236"
+   height="192"
+   id="svg3843"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="clippedimgtest.svg"
+   viewBox="0 0 236 192">
+  <defs
+     id="defs3845">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4195">
+      <path
+			   transform="translate(0.20310482,-859.55625)"
+         sodipodi:nodetypes="cssssssscc"
+         inkscape:connector-curvature="0"
+         id="path4197"
+         d="m 193.01032,876.69926 c -19.5718,-8.89628 -48.62243,-18.81991 -78.28723,-16.90293 -25.734021,1.66298 -66.17204,3.07642 -81.27901,20.28417 C 16.659109,899.19958 -2.383285,930.00595 -1.813644e-6,951.85301 2.2003479,972.02318 1.0910727,987.44665 29.842068,1027.9399 c 27.299332,38.4487 84.960112,18.3593 107.645612,18.8041 22.6855,0.4448 26.16493,-5.0188 49.74006,-23.2562 23.57514,-18.2374 52.93284,-41.81249 48.92952,-68.0565 -4.00333,-26.24401 -33.80585,-65.38763 -33.80585,-65.38763 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.8231706;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7071068"
+     inkscape:cx="293.45121"
+     inkscape:cy="119.19684"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:snap-global="true"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1600"
+     inkscape:window-height="823"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:snap-to-guides="true"
+     inkscape:snap-grids="true"
+     inkscape:object-nodes="true"
+     inkscape:snap-smooth-nodes="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3851"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="false"
+       spacingy="20px"
+       spacingx="60px"
+       originx="0.20310482px"
+       originy="-0.7647615px" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="0.20310482,1319.2352"
+       id="guide3914" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="264.66104,526.02979"
+       id="guide4060" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="199.9523,1139.0411"
+       id="guide3282" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata3848">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <image
+       sodipodi:absref="C:\xampp\htdocs\wp-moumou\wp-content\themes\moumou\fdm-templates\testimg.jpg"
+       xlink:href="testimg.jpg"
+			 clip-path="url(#clipPath4195)"
+       id="image4192"
+			 width="236"
+			 height="192"
+       x="0"
+       y="0" />
+   </g>
+</svg>

@@ -1,0 +1,1220 @@
+/*
+Theme Name: Moumou Milk Theme
+Theme URI: 
+Author: hodayx
+Author URI: 
+Description: Theme for Moumou
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: moumou cafe milk translation-ready
+Text Domain: moumoumilk
+
+*/
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+/***********************************
+ * 00. DEFINITIONS
+ ***********************************/
+ 
+$color-moumou-blue: 		#DCE7F0;
+$color-moumou-cream: 		#FBF7F6;
+$color_header_background:	#222222;
+$color_header_text:			#FFFFFF;
+$color_content_background:	#FFFFFF;
+$color_content_text:		#000000;
+$color-link:				#666666;
+$color-lightgrey:       rgba(220,220,220, 1);
+$color-fdm-item-blue:       #227799;
+$color-front-page-button:	#266BE5;
+$color_post_date:			#999999;
+
+$width_main_content:		400px;
+
+$url-dot-border-png: url("./assets/img/dotborder.png");
+
+@mixin border-dotted {
+    background-image: $url-dot-border-png;
+	background-repeat: repeat-x;
+	background-size: auto 1px;
+	background-position: bottom;
+	
+	&:first-child {
+    background-image: $url-dot-border-png, $url-dot-border-png;
+	background-position: bottom, top;
+	}
+}
+
+@mixin front-page-section-narrower($width) {
+
+	margin-left: auto;
+	margin-right: auto;
+
+	@include media-breakpoint-up(xs) {
+		width: 100%;
+	}
+	@include media-breakpoint-up(sm) {
+		width: 66%;
+		min-width: $width;
+	}
+	
+	
+}
+
+/***********************************
+ * 0. RESET
+ ***********************************/
+ 
+html, body {
+    height:100%;
+}
+
+body {
+	font-size: 14px;
+	
+	@media only screen and (min-width: 540px) {
+			font-size: 16px;
+	}
+}
+
+body {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/***********************************
+ * 1a. STRUCTURE layout
+ ***********************************/
+
+.flex-container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	
+	.flex-top {
+		flex: 0 0 3em;	
+	}
+	.flex-middle {
+		flex: 1 0 0px;	
+	}
+	.flex-bottom {
+		flex: 0 0 4em;
+	}	
+}
+
+
+ 
+ /***********************************
+ * 1b. STRUCTURE styling
+ ***********************************/
+ 
+
+  /***********************************
+ * 1c. STRUCTURE colors
+ ***********************************/
+
+body {
+	background-color: 	$color_header_background;
+}
+ 
+#main-header,
+#main-footer {
+	background-color: 	$color_header_background;
+	color: 				$color_header_text;
+}
+
+#main-content{
+	background-color: $color_content_background;
+	color:            $color_content_text;
+}
+
+
+
+#main-article h1 {
+	text-align: center;
+	color: #333333;
+	
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	
+}
+
+#main-article {
+	font-size: 1.0rem;
+	color: #444444;
+}
+
+
+
+/*
+ this is a wordpress class
+*/
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*
+ this is a wordpress class
+*/
+.wp-caption {
+    max-width: 100%;
+	.wp-caption-text {
+		font-size: 0.8em;
+	}
+}
+
+
+/***********************************
+ * 2. GENERIC STYLES
+ ***********************************/
+
+ 
+a {
+	font-weight:  700;
+
+	&:link,
+	&:visited {
+		color: $color-link;
+	}
+	&:hover,
+	&:active {
+		color: black;
+	}
+	
+	&:hover {
+		text-decoration: none;
+	}
+
+}
+ 
+
+.body {
+	/*font-family: "Rounded Mplus 1c";*/ 
+	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Hiragino Kaku Gothic ProN,"Rounded Mplus 1c","メイリオ",meiryo,sans-serif; 
+}
+
+.content-section p,
+.fdm-addon-section-desc,
+.fdm-item-title, 
+ {
+    font-family: 'Rounded Mplus 1c'; 
+}
+
+h1 {
+
+	font-family: 'Rounded Mplus 1c';
+	
+	@include media-breakpoint-up(xs) {
+		font-weight: 700;
+		font-size: 1.8rem;
+	}
+	@include media-breakpoint-up(sm) {
+		font-weight: 700;
+		font-size: 2.1rem;
+	}		
+
+	.front-page-section-title & {
+		font-family: 'Amatic SC', cursive;
+		
+		@include media-breakpoint-up(xs) {
+			font-weight: 800;
+			font-size: 3.5rem;
+		}
+		@include media-breakpoint-up(sm) {
+			font-weight: 800;
+			font-size: 3.5rem;
+		}		
+	}
+	
+}
+
+.fdm-section-header h3 {
+	font-family: 'Amatic SC', cursive;
+	
+	@include media-breakpoint-up(xs) {
+		font-weight: 800;
+		font-size: 2.8rem;
+	}
+	@include media-breakpoint-up(sm) {
+		font-weight: 800;
+		font-size: 2.8rem;
+	}		
+}
+	
+	
+
+@include media-breakpoint-up(xs) {
+	.content-section p,
+	.fdm-addon-section-desc {
+		font-weight: 500-100;
+		font-size: 1.2rem;
+	}
+	.fdm-item-panel .fdm-item-title {
+		font-weight: 700-100;
+		font-size: 1.0rem;
+	}
+	
+}
+
+@include media-breakpoint-up(sm) {
+	.content-section p {
+		font-weight: 500;
+		font-size: 1.3rem;
+	}
+	.btn {
+		font-weight: 700;
+		font-size: 1.3rem;
+	}
+	
+	#table-shop-info,
+	{
+		font-size: 1.15rem;
+	}
+	
+	.obi-recentposts {
+		.obi-recentposts-date {
+			font-size: 1.08rem;
+		}
+		.obi-recentposts-title,
+		.obi-recentposts-content {
+			font-size: 1.15rem;
+		}
+		
+	}
+
+		
+}
+
+
+
+
+.japanese {
+	text-align: left;
+}
+
+.japanese .three-photo-col-6 {
+	text-align: left;
+}
+.japanese .fdm-section-header p {
+	text-align: left;
+}
+
+
+.wp-caption-text {
+	font-size: 0.85rem;
+	color: $color-link;
+}
+
+.fdm-item-title {
+	color: $color-fdm-item-blue;
+}
+
+
+
+ /***********************************
+ * 4. COMPONENTS
+ ***********************************/
+ 
+ nav {
+	&.navbar-inverse .navbar-nav .nav-link a {
+		&:link,
+		&:visited {
+			color: white;
+		}
+		&:hover,
+		&:active {
+			color: $color-lightgrey;
+		}
+	 }
+	 
+	.navbar-brand {
+		img {
+			height: 40px;
+			width: auto;
+		}
+	}
+	
+ }
+ 
+ 
+.heroimg {
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	
+	height:150px;
+	
+	&.heroimg-frontpage {
+		@include media-breakpoint-up(xs) {
+			height:50vh;
+		}	
+		@include media-breakpoint-up(sm) {
+			height:50vh;
+		}
+		@include media-breakpoint-up(md) {
+			height:(0.56*768px);
+		}
+		@include media-breakpoint-up(lg) {
+			height:(0.56*768px)
+		}
+		@include media-breakpoint-up(xl) {
+			height:(0.56*768px)
+		}
+	}
+	
+	&.heroimg-haslogo {
+		position:relative;
+	}
+	
+	.heroimg-logo-wrapper {
+		max-width: 100%;
+		height: 50px;
+		width: auto;
+		
+		position:absolute;
+		bottom: 3rem;
+		right: 15px;
+		
+		img {
+			height: 50px;
+			width: auto;
+		}	
+
+	}
+}
+
+ 
+.table-border-dotted {
+
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	width: 100%;
+	
+	tr {
+		@include border-dotted;
+		
+		th {
+			@include media-breakpoint-up(xs) {
+				width: 6rem;
+			}
+			
+			@include media-breakpoint-up(sm) {
+				width: 8rem;
+			}
+		}
+		
+	}
+	
+	td {
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+	}
+	
+	
+}
+
+.map-stretchy-wrapper {
+	@include media-breakpoint-up(sm) {
+		width: 100%;
+		padding-bottom: 50%;
+	}
+}
+
+.obi-recentposts {
+
+	@include border-dotted;
+	
+	padding-top: 1em;
+    padding-bottom: 1em;
+	
+	/*
+	p {
+		margin-bottom: 0rem;
+	}
+	*/
+	
+	.obi-recentposts-date {
+		color:$color_post_date;
+		font-size:0.8rem;
+	}
+
+
+}
+ 
+.front-page-section {
+
+	padding-top: 	1rem;
+	padding-bottom:	2rem;
+	
+	/*overflow: hidden;*/
+	
+	&:nth-child(even) {
+		background-color: $color-moumou-blue;
+		
+		.title-back-img {
+		    background-image: url("./assets/img/puddlewhite.svg");	
+		}
+	}
+	&:nth-child(odd) {
+		background-color: $color-moumou-cream;
+		
+		.title-back-img {
+		    background-image: url("./assets/img/puddle.svg");	
+		}
+	}
+	
+	.front-page-section-content {
+		//@include make-container(); //bootstrap
+		//@include make-container-max-widths(); //bootstrap
+		padding-left: 15px;
+		padding-right: 15px;
+		margin-bottom: 2rem;
+		margin-top: 1rem;
+	}
+	
+	.btn {
+	
+		color: white;
+		background-color: $color-front-page-button;
+		padding-top: 0.3rem;
+		padding-bottom: 0.3rem;
+		padding-left: 1.5em;
+		padding-right: 1.5em;
+		line-height: 1.8em;
+		border-radius: 100vh; // large number will be truncated to capsule shape	
+	}
+	
+	
+	.front-page-section-title {
+
+	}
+
+	.front-page-section-content-link {
+		text-align: center;
+		margin-top: 1rem;
+	}
+
+	
+}
+
+
+.title-underlined
+ {
+	 
+    background-image: url("./assets/img/dotborder.svg");
+	background-repeat: repeat-x;
+	background-position: 0rem 1.3em;
+	background-size: auto 0.06em;
+	padding-bottom: 0.12em;
+
+	
+}
+
+.title-hasbgimages {
+	position:relative;
+	z-index: 2;
+	
+	line-height: 3em; // title-hasbgimages-large (need this rule to make space below and above blue milk blob 
+	
+	%title-bgimage-smallsize{
+		width: 0.7em;
+		height: 0.7em;
+	}
+	
+	%title-bgimage{
+		position:absolute;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+	%title-bgimage-fg{
+		@extend %title-bgimage;
+		z-index: 2;
+	}
+	%title-bgimage-bg{
+		@extend %title-bgimage;
+		z-index: -1;
+	}
+	
+	.title-left-img {
+		@extend %title-bgimage-fg;
+		@extend %title-bgimage-smallsize;
+		//left: -25px;
+		//top: -5px;
+		//width: 30px;
+		//height: 30px;
+		left: -0.7em;
+		top: -0.05em;
+
+		background-image: url("./assets/img/gyunyu.svg");
+	}
+
+	.title-right-img {
+		@extend %title-bgimage-fg;
+		@extend %title-bgimage-smallsize;
+		right: -1.1em;
+		top: -0.05em;	
+
+		background-image: url("./assets/img/ushi.svg");		
+	}
+
+	.title-back-img {
+		@extend %title-bgimage-bg;
+		left: -2.2em;
+		top: -0.6em;	
+		width: 3.5em;
+		height: 3.5em;
+		background-image: url("./assets/img/puddle.svg");
+	}	
+}
+
+
+
+
+///////////////////////////////////////////////
+// unsorted CSS
+
+
+.gifts-text {
+	display:inline-block;
+	width:48%;
+}
+
+.gifts-image {
+	display:inline-block;
+	width:48%;
+}
+
+.gifts-image img {
+	width:100%;
+	height: auto;
+
+}
+
+
+#main-footer {
+	text-align: center;
+}
+
+#main-sidebar ul{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;	
+}
+
+#content-404 {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+#single-navlink-container {
+	display: flex;
+}
+#single-navlink-next {
+	width:49%;
+}
+#single-navlink-prev {
+	width:49%;
+	
+}
+
+#home-navlink-container ,
+#archive-navlink-container {
+	display: flex;
+}
+#home-navlink-prev,
+#home-navlink-next{
+	width:49%;
+	
+}
+#archive-navlink-prev,
+#archive-navlink-next{
+	width:49%;
+	
+}
+#single-navlink-next,
+#home-navlink-next,
+#archive-navlink-next {
+	text-align: right;
+}
+
+#top > header {
+	display: none;
+}
+
+.blog #main-article h1 
+.archive #main-article h1 {
+
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+
+.blog #main-article .left-img,
+.blog #main-article .right-img,
+.archive #main-article .left-img,
+.archive #main-article .right-img    {
+    display:none;	
+}
+
+
+.blog #main-article h1 .title-text,
+.archive #main-article h1 .title-text  {
+    font-size: 1.3rem;
+    line-height: 1.0;	
+	display:inline-block;
+	text-align: left;
+}
+
+.blog #main-article h1,
+.archive #main-article h1 {
+	text-align: left;
+	
+}
+
+
+@mixin column-padding() {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+@mixin white-rounded-background() {
+	border-radius: 1.3em;
+	background-color: rgba(255, 255, 255, 1);
+	display: block;
+	padding-top: 0.8em;
+	padding-bottom: 0.8em;
+}
+
+.fdm-menu {
+
+	list-style: none;
+	padding-left: 0px;
+
+	.fdm-section {
+		list-style: none;
+		padding-left: 0px;
+	}
+
+	.fdm-section-header h3 {
+		padding-top: 0.25rem;
+		padding-bottom: 0.25rem;
+				
+		position: relative;
+		z-index: 2;
+		
+		text-align: center;
+		
+		
+		
+	}
+
+	.fdm-addon-section-desc {
+		text-align: left;
+		
+	}
+
+	.fdm-section-header .title-back-img {
+		left: -65px;
+		top: -25px;	
+		width: 150px;
+		height: 150px;
+	}
+	
+	.fdm-addon-section-col-wrapper {
+		display:flex;
+		justify-content: center;
+	
+		&:nth-child(odd) {
+			flex-direction: row-reverse;
+		}
+		&:nth-child(even) {
+			flex-direction: row;
+		}
+		
+		.fdm-addon-section-col-0,
+		.fdm-addon-section-col-2	{
+			z-index:1;
+		}
+		.fdm-addon-section-col-1 {
+			z-index:2;
+		}
+		
+		@include media-breakpoint-up(xs) {
+			.fdm-addon-section-col-0 {
+				width:40%;
+			}	
+			.fdm-addon-section-col-1 {
+				width:59.9%;
+			}
+			.fdm-addon-section-col-2 {
+				width:0%;
+			}
+		
+		}
+		
+		@include media-breakpoint-up(sm) {
+			.fdm-addon-section-col-0,
+			.fdm-addon-section-col-2{
+				//width:40%;
+				flex-grow: 1;
+				flex-basis:1px;
+			}	
+			.fdm-addon-section-col-1 {
+				flex-basis:$width_main_content;
+				flex-grow: 0;
+
+			}
+		}
+	
+	}
+	
+
+	
+	
+	@include media-breakpoint-up(sm) {
+		
+		.fdm-item-title {
+			@include column-padding;
+		}
+		
+	}
+	
+	
+	
+	/*
+	@media screen and (min-width: 768px) {
+		.fdm-section-col-0 {
+			width:20%;
+		}	
+		.fdm-section-col-1 {
+			width:39.9%;
+		}
+		.fdm-section-col-2 {
+			width:40%;
+		}		
+	}
+
+	@media screen and (min-width: 992px) {
+		.fdm-section-col-0 {
+			width:35%;
+		}
+		.fdm-section-col-1 {
+			width:29.9%;
+		}	
+		.fdm-section-col-2 {
+			width:35%;	
+		}		
+	}
+
+	@media screen and (min-width: 1200px) {
+		.fdm-section-col-0 {
+			width:30%;
+		}
+		.fdm-section-col-1 {
+			width:39.9%;
+		}	
+		.fdm-section-col-2 {
+			width:30%;
+		}		
+	}
+	*/
+
+	
+
+	.fdm-item {
+		margin-bottom: 0em;
+	}
+
+	/*
+	.fdm-section-header, .fdm-section-header h3, .fdm-item-panel, .fdm-item-panel p {
+		margin-bottom: 0em;	
+	}
+	*/
+
+	.fdm-section-header {
+		margin-bottom: 1rem;	
+		margin-top: 1rem;
+	}
+
+	/*
+	 *  Do not show individual menu item images on front page
+	 */
+	.fdm-item .fdm-item-panel img {
+		display:none;
+	}
+	/*
+	 *  Do not show individual menu item prices on front page
+	 */	
+	 /*
+	.fdm-item-price-wrapper {
+		display:none;
+	}
+	*/
+
+	/*
+	.fdm-item-image {
+		float: none !important;
+		height: auto;
+		position:relative;
+	}
+	*/
+
+	/*
+	@media screen and (min-width: 0px) {
+		.fdm-section-col-2 {
+			position:relative;
+			min-height: 300px;
+
+		}
+		
+		.fdm-item-image {
+			//width: 200% !important; //oversize on purpose for crop
+			position:absolute;
+			width: 300px !important;
+		}
+		
+		.fdm-section-col-wrapper:nth-child(odd) .fdm-item-image { 
+			//left: -100%;
+			right: 0px;
+		}
+		.fdm-section-col-wrapper:nth-child(even) .fdm-item-image { 
+			left: 0;
+		}
+	}
+	@media screen and (min-width: 576px) {
+	
+		.fdm-item-image {
+			width: 120% !important; //oversize on purpose for crop
+		}
+		
+		.fdm-section-col-wrapper:nth-child(odd) .fdm-item-image { 
+			left: -10%;
+		}
+		.fdm-section-col-wrapper:nth-child(even) .fdm-item-image { 
+			left: 0;
+		}		
+	}
+	@media screen and (min-width: 768px) {
+	
+		.fdm-item-image {
+			width: 100% !important; //oversize on purpose for crop
+		}
+		
+		.fdm-section-col-wrapper:nth-child(odd) .fdm-item-image { 
+			left: 0%;
+		}
+		.fdm-section-col-wrapper:nth-child(even) .fdm-item-image { 
+			left: 0;
+		}		
+	}
+
+	@media screen and (min-width: 992px) {
+	
+		.fdm-item-image {
+			width: 100% !important; //oversize on purpose for crop
+		}
+		
+		.fdm-section-col-wrapper:nth-child(odd) .fdm-item-image { 
+			left: 0%;
+		}
+		.fdm-section-col-wrapper:nth-child(even) .fdm-item-image { 
+			left: 0;
+		}		
+	}
+	@media screen and (min-width: 1200px) {
+	
+		.fdm-item-image {
+			width: 100% !important; //oversize on purpose for crop
+		}
+		
+		.fdm-section-col-wrapper:nth-child(odd) .fdm-item-image { 
+			left: 0%;
+		}
+		.fdm-section-col-wrapper:nth-child(even) .fdm-item-image { 
+			left: 0;
+		}		
+	}
+
+
+	.fdm-section-col-wrapper {
+		
+		margin-top: 2rem;
+	}
+	
+	*/
+
+}
+
+
+.fdm-addon-item-image {
+	@include media-breakpoint-down(sm) {
+		width: 300px;
+		position:relative;
+		.fdm-addon-section-col-wrapper:nth-child(odd) & {
+			left:0px;
+		}
+		.fdm-addon-section-col-wrapper:nth-child(even) & {
+			left:-150px;
+		}
+
+		padding-top:1em;
+		padding-bottom:1em;		
+	}
+	
+	@include media-breakpoint-up(sm) {
+		
+	}
+}
+
+@include media-breakpoint-up(sm) {
+	.fdm-addon-section-desc,
+	.front-page-section-content > p {
+		@include white-rounded-background();
+		@include column-padding();
+	}
+}
+
+@mixin centered-col($width) {
+		width:$width;
+		//width:$width_main_content;
+		max-width:100%;
+		margin-left:auto;
+		margin-right:auto;
+}
+
+.front-page-section { 
+
+	&:not(#menu) {
+		.front-page-section-content {
+			@include centered-col(700px);
+		}
+	}
+		
+	&#menu {
+		p {
+			@include centered-col($width_main_content);
+		}
+	}	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+body {
+    font-family: 'Rounded Mplus 1c'; 
+	font-weight: 300;
+			
+}
+
+#main-article {
+	    font-family: 'Rounded Mplus 1c'; 
+	font-weight: 700;
+}
+
+.fdm-section-header p {
+  font-family: 'Rounded Mplus 1c'; 
+	font-weight: 600;
+	
+}
+
+.fdm-item-title {
+	font-family: 'Rounded Mplus 1c'; 
+	font-weight: 700;	
+}
+*/
+
+
+
+#table-shop-info {
+	@include front-page-section-narrower(500px);
+		
+	th {
+		padding-left: 0.5rem;
+		padding-right: 1rem;
+	}
+
+	tr {
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+
+	}	
+}
+
+
+
+
+
+
+@include media-breakpoint-up(sm) {
+
+	.content-section > p{
+		border-radius: 1.3em;
+		background-color: rgba(255, 255, 255, 1);
+		display: inline-block;
+		padding-top: 0.8em;
+		padding-bottom: 0.8em;
+		
+	}
+	
+}
+
+
+
+.archive,
+.blog {
+
+	.post {
+
+		@include border-dotted;
+		
+		padding-top: 1em;
+		padding-bottom: 1em;
+		
+		margin-top: 1em;
+		margin-bottom: 1em;
+		
+		.post-text h1 {
+			text-align: center;
+			margin-left: 2.0em;
+			margin-right: 2.0em;
+		}
+		
+		.post-date {
+			color:$color_post_date;
+			font-size:0.8em;
+		}
+			
+			
+		@include media-breakpoint-down(xs) {
+			.post-thumbnail {
+				width: 100%;
+				height: auto;
+				text-align: center;
+				img {
+					max-width: 100%;
+					max-height: 16em;
+					height: auto;
+					width: auto;
+				}
+			}				
+			
+		}		
+	
+		@include media-breakpoint-up(sm) {
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: flex-start;
+			align-content: flex-start;
+			
+			.post-col-0,
+			.post-col-2	{
+				flex: 1 1 1px;
+			}
+			.post-col-1 {
+				flex: 0 0 400px;
+			}
+			
+			.post-thumbnail {
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+			
+			.post-text {
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+			
+		}
+		
+		@include media-breakpoint-up(lg) {
+			
+			.post-col-0 {
+				margin-left: 100px;
+			}
+			.post-col-2	{
+				margin-right: 100px;
+			}
+		}
+		@include media-breakpoint-up(xl) {
+			
+			.post-col-0 {
+				margin-left: 200px;
+			}
+			.post-col-2	{
+				margin-right: 200px;
+			}
+		}		
+	}
+
+}
+
+/*
+ * for iphone overscroll left-right and momentum scroll
+*/
+html,
+body {
+	background-color: #222222;
+	
+}
+
+html,
+body {
+	overflow-x: hidden;
+	
+}
+
+/*
+html {
+    overflow-y: hidden;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    overflow-y: auto;
+}
+*/
+
+
+
+body {
+overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.content-section-padding {
+padding-left: 15px;
+padding-right: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
